@@ -1,6 +1,6 @@
 
-#pip install pynput clipboard
-import datetime,traceback, socket,traceback
+#pip install pynput clipboard plyer pystray pyautogui pywebview pillow
+import datetime,traceback, socket
 # from win10toast import ToastNotifier
 from plyer import notification
 import plyer.platforms, plyer.platforms.win, plyer.platforms.win.notification # for plyer at windows of pyinstaller. 
