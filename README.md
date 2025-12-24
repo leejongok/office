@@ -6,3 +6,6 @@
 ### press left shift*3 : translation   
    
 ### or press ctrl,shft,ctrl : fast fullscreen capture.
+
+### pip install pyinstaller
+### pyinstaller --onefile --noconsole --add-data "c:\\path-to-project\\translate.ico;." --icon=c:\\path-to-project\\translate.ico myoffice3.py -n myofc
