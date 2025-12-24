@@ -1,0 +1,7 @@
+pynput
+clipboard
+plyer
+pystray
+pyautogui
+pywebview
+pillow
