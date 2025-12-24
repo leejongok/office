@@ -8,32 +8,25 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pyinstaller
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
 
-    - name: Build exe
-      run: |
-        pyinstaller ^
-          --onefile ^
-          --noconsole ^
-          --icon=translate.ico ^
-          --add-data "translate.ico;." ^
-          -n myofc ^
-          myoffice3.py
+      - name: Build exe with PyInstaller
+        run: pyinstaller --onefile --noconsole --icon translate.ico --add-data "translate.ico;." myoffice3.py -n myofc
 
-    - name: Upload exe artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: office-windows-exe
-        path: dist/
+      - name: Upload exe artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: myofc-windows-exe
+          path: dist/myofc.exe
